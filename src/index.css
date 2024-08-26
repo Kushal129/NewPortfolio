@@ -65,9 +65,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .green-black-gradient {
-  background: "#014d19";
-  background: linear-gradient(90.13deg, #01872b 0.20%, #000000 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #01872b 0.3%, #000000 97.5%);
+  background-color: #01280e; /* Fallback color for older browsers */
+  background: linear-gradient(90deg, #016721 0%, #000000 100%);
+  background: -webkit-linear-gradient(90deg, #00571c 0%, #000000 100%); /* For Safari */
+  background: -moz-linear-gradient(90deg, #01872b 0%, #000000 100%); /* For Firefox */
+  background: -o-linear-gradient(90deg, #01872b 0%, #000000 100%); /* For Opera */
 }
 
 .orange-text-gradient {
