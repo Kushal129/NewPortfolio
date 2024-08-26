@@ -8,7 +8,7 @@ module.exports = {
         logo: "#3f8c00",
         primary: "#000000",
         secondary: "#a2c49d",
-        tertiary: "##153010",
+        tertiary: "#153010",
         "black-100": "#115d25",
         "black-200": "#032c10",
         "white-100": "#f3f3f3",
