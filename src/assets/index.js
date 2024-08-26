@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./kp-high-resolution-logo-transparent.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -6,6 +6,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import webpreview from "./webpreview.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -21,14 +22,29 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import barcode from "./barcode.png";
+import bpms from "./bpms.png";
+import ams from "./ams.png";
+import slwkhp from "./slwkhp.png";
+import perfume from "./perfume.png";
+import cli from "./cli.png";
+import pythonP from "./pythonP.png";
+
+import windowsSecurity from "./tech/windowsSecurity.png";
+
+import kaliLinux from "./tech/kaliLinux.png";
+import kaliLinuxw from "./tech/kaliLinuxw.png";
+import cybersecurityTools from "./tech/cybersecurityTools.png";
+
+import scripting from "./tech/scripting.png";
+
+import python from "./tech/python.png";
+import nmap from "./tech/nmap.png";
+import wireshark from "./tech/wireshark.png";
+import metasploit from "./tech/metasploit.png";
+import burpSuite from "./tech/burpSuite.png";
+
 
 export {
   logo,
@@ -43,7 +59,10 @@ export {
   docker,
   figma,
   git,
+  webpreview,
   html,
+  cli,
+  pythonP,
   javascript,
   mongodb,
   nodejs,
@@ -52,11 +71,19 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  barcode,
+  bpms,
+  ams,
+  slwkhp,
+  perfume,
+  windowsSecurity,
+  kaliLinux,
+  kaliLinuxw,
+  cybersecurityTools,
+  scripting,
+  python,
+  nmap,
+  wireshark,
+  metasploit,
+  burpSuite,
 };
