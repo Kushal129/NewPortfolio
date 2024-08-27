@@ -15,27 +15,29 @@ const StarsCanvas = lazy(() => import('./components/canvas/Stars'));
 
 const App = () => {
   return (
-    <ErrorBoundary>
-      <BrowserRouter>
-        <Suspense fallback={<Loading />}>
-          <div className="relative z-0 bg-primary">
-            <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-              <Navbar />
-              <Hero />
+    <React.StrictMode>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <Suspense fallback={<Loading />}>
+            <div className="relative z-0 bg-primary">
+              <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+                <Navbar />
+                <Hero />
+              </div>
+              <About />
+              <Experience />
+              <Tech />
+              <Works />
+              {/* <Feedbacks /> */}
+              <div className="relative z-0">
+                <Contact />
+                <StarsCanvas />
+              </div>
             </div>
-            <About />
-            <Experience />
-            <Tech />
-            <Works />
-            {/* <Feedbacks /> */}
-            <div className="relative z-0">
-              <Contact />
-              <StarsCanvas />
-            </div>
-          </div>
-        </Suspense>
-      </BrowserRouter>
-    </ErrorBoundary>
+          </Suspense>
+        </BrowserRouter>
+      </ErrorBoundary>
+    </React.StrictMode>
   );
 }
 
