@@ -1,84 +1,58 @@
-import React, { Suspense, useState, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import CanvasLoader from "../Loader";
+import { motion } from "framer-motion";
+import { styles } from "../styles";
+// import { ComputersCanvas } from "./canvas";
+// import heroimg from '../assets/hero.png';
+import heroimg from '../../assets/2.png';
 
-const Computers = ({ isMobile }) => {
-  const { scene, nodes, materials } = useGLTF("./desktop_pc/scene.gltf");
-
-  // Check if geometry data is valid
-  if (scene && scene.isObject3D) {
-    scene.traverse((child) => {
-      if (child.geometry && child.geometry.attributes.position) {
-        const positions = child.geometry.attributes.position.array;
-        if (positions.includes(NaN)) {
-          console.warn("Geometry contains NaN values.");
-        }
-      }
-    });
-  }
-
+const Hero = () => {
   return (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={1} />
-      <primitive
-        object={scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
-      />
-    </mesh>
-  );
-};
+    <section className="relative w-full mx-auto">
+      <div
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+      >
+        <div className='flex flex-col justify-center items-center mt-5'>
+          <div className='w-5 h-5 rounded-full bg-[#158808]' />
+          <div className='w-1 sm:h-80 h-40 green-gradient' />
+        </div>
 
-const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+        <div>
+          <h1 className={`${styles.heroHeadText} text-white`}>
+            Hi, I'm <span className='text-[#158808]'>Kushal</span>
+          </h1>
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            I develop web-dev and <br className='sm:block hidden' />
+            ensure cyber security
+          </p>
+        </div>
+      </div>
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    setIsMobile(mediaQuery.matches);
-
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
-
-  return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+      <div className="flex justify-center items-center">
+        <img
+          src={heroimg}
+          alt="Hero Image"
+          className="lg:mt-20 lg:w-full lg:h-full m-[200px] w-full h-full object-cover lg:object-contain"
         />
-        <Computers isMobile={isMobile} />
-      </Suspense>
+      </div>
 
-      <Preload all />
-    </Canvas>
+      <div className='absolute w-full flex justify-center  items-center'>
+        <a href='#about'>
+          <div className='w-[35px] h-[64px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
+            <motion.div
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className='w-2 h-2 rounded-full bg-secondary mb-1'
+            />
+          </div>
+        </a>
+      </div>
+    </section>
   );
 };
 
-export default ComputersCanvas;
+export default Hero;

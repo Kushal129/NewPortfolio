@@ -93,10 +93,10 @@ const technologies = [
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
   // Cybersecurity technologies
   {
     name: "Windows Security",
