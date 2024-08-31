@@ -25,7 +25,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className=' p-5 rounded-2xl sm:w-[360px] w-full'
+        className='p-5 rounded-2xl sm:w-[360px] w-full'
       >
         <div className='relative w-full h-[230px]'>
           <img
@@ -35,19 +35,17 @@ const ProjectCard = ({
           />
 
           <div className='absolute inset-0 flex justify-between m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(live_preview_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={webpreview}
-                alt='live preview'
-                className='w-1/2 h-1/2 object-contain'
-              />
-            </div>
+            {live_preview_link && (
+              <div
+                onClick={() => window.open(live_preview_link, "_blank")}
+                className='bg-red-700 w-6 h-6 rounded-full flex justify-center items-center cursor-pointer'
+              >
+                <h2 className="text-[10px]">Live</h2>
+              </div>
+            )}
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              className='black-gradient w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'
             >
               <img
                 src={github}
@@ -59,15 +57,15 @@ const ProjectCard = ({
         </div>
 
         <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <h3 className='text-white font-bold text-lg'>{name}</h3>
+          <p className='mt-2 text-secondary text-sm'>{description}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`text-xs ${tag.color}`}
             >
               #{tag.name}
             </p>

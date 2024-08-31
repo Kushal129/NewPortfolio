@@ -69,6 +69,7 @@ const services = [
 ];
 
 const technologies = [
+
   {
     name: "HTML 5",
     icon: html,
@@ -93,10 +94,6 @@ const technologies = [
     name: "git",
     icon: git,
   },
-  // {
-  //   name: "figma",
-  //   icon: figma,
-  // },
   // Cybersecurity technologies
   {
     name: "Windows Security",
@@ -104,7 +101,7 @@ const technologies = [
   },
   {
     name: "Kali Linux",
-    icon: kaliLinux,
+    icon: kaliLinuxw,
   },
   {
     name: "Cybersecurity Tools",

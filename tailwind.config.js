@@ -14,7 +14,7 @@ module.exports = {
         "white-100": "#f3f3f3",
       },
       boxShadow: {
-        card: "0px 20px 160px -20 px #032c10",
+        card: "0px 20px 160px -20px #032c10",
       },
       screens: {
         xs: "450px",
