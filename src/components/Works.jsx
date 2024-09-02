@@ -7,6 +7,7 @@ import { github, webpreview } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import '../../src/index.css'
 
 const ProjectCard = ({
   index,
@@ -18,14 +19,14 @@ const ProjectCard = ({
   live_preview_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <div>
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='p-5 rounded-2xl sm:w-[360px] w-full'
+        className='p-5 rounded-2xl w-full max-w-xs sm:max-w-md'
       >
         <div className='relative w-full h-[230px]'>
           <img
@@ -40,7 +41,7 @@ const ProjectCard = ({
                 onClick={() => window.open(live_preview_link, "_blank")}
                 className='bg-red-700 w-6 h-6 rounded-full flex justify-center items-center cursor-pointer'
               >
-                <h2 className="text-[10px]">Live</h2>
+                <h2 className="text-[10px] text-white">Live</h2>
               </div>
             )}
             <div
@@ -72,37 +73,41 @@ const ProjectCard = ({
           ))}
         </div>
       </Tilt>
-    </motion.div>
+    </div>
   );
 };
 
 const Works = () => {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-      </motion.div>
+    <section className="py-10 px-5 sm:px-10">
+      <div className={`fade-up`}>
+        <p className={`${styles.sectionSubText} text-center`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>Projects.</h2>
+      </div>
 
-      <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+      <div className='w-full flex justify-center'>
+        <p
+          className='mt-3 text-secondary text-base max-w-3xl leading-[30px] text-center fade-up'
+          style={{ animationDelay: '0.5s' }}
         >
           Following projects showcase my skills and experience through
           real-world examples of my work. Each project is briefly described with
           links to code repositories and live demos. It reflects my
           ability to solve complex problems, work with different technologies,
           and manage projects effectively.
-        </motion.p>
+        </p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+      <div className='mt-10 flex flex-wrap gap-5 justify-center'>
+        {projects.length > 0 ? (
+          projects.map((project, index) => (
+            <ProjectCard key={`project-${index}`} index={index} {...project} />
+          ))
+        ) : (
+          <p>No projects available</p>
+        )}
       </div>
-    </>
+    </section>
   );
 };
 

@@ -207,24 +207,20 @@ const projects = [
   {
     name: "Barcode Generator",
     description:
-      "A robust barcode generator website built with HTML, CSS, and PHP that can generate over 500 unique barcodes in a single batch. Designed for efficiency and user-friendliness, this tool addresses limitations of existing options and provides a reliable solution for bulk barcode generation.",
+      "A robust barcode generator website built with React.js and Tailwind CSS that can generate over 100 unique barcodes in a single batch. Designed for efficiency and user-friendliness, this tool addresses limitations of existing options and provides a reliable solution for bulk barcode generation.",
     tags: [
       {
-        name: "PHP",
-        color: "purple-text-gradient",
+        name: "React.js",
+        color: "blue-text-gradient",
       },
       {
-        name: "HTML",
-        color: "orange-text-gradient",
-      },
-      {
-        name: "CSS",
+        name: "Tailwind CSS",
         color: "blue-text-gradient",
       },
     ],
     image: barcode,
     source_code_link: "https://github.com/",
-    live_preview_link: "https://barcodebyjoker.000webhostapp.com/"
+    live_preview_link: "https://barcodegeneratorkhp.netlify.app/"
   },
   {
     name: "Bus Pass Management System",

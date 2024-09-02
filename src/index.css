@@ -323,3 +323,20 @@ body::-webkit-scrollbar-thumb:hover {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   animation: glitch-anim 1s infinite linear;
 }
+
+/* styles.css */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.75s ease-out forwards;
+}
