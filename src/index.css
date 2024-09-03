@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +14,7 @@
 }
 
 ::selection {
-  background-color: rgb(6, 104, 3) !important;
+  background-color: #066803 !important;
   color: rgb(0, 0, 0) !important;
 }
 
@@ -35,6 +34,39 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb:hover {
   background-color: #f3f5f3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
 }
 
 
@@ -324,19 +356,167 @@ body::-webkit-scrollbar-thumb:hover {
   animation: glitch-anim 1s infinite linear;
 }
 
-/* styles.css */
 
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* ----------------------------- Resume download button ----------------------------------- */
+
+.ui-btn {
+  --btn-default-bg: transparent;
+  --btn-padding: 15px 20px;
+  --btn-hover-bg: #000000;
+  --btn-transition: .3s;
+  --btn-letter-spacing: .1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: #3f8c00;
+  --default-btn-color: #0b5503;
+  --font-size: 13px;
+  --font-weight: 400;
+  --font-family: Menlo, Roboto Mono, monospace;
 }
 
-.fade-up {
-  animation: fadeUp 0.75s ease-out forwards;
+
+.ui-btn {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid var(--default-btn-color);
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+}
+
+
+.ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span,
+.ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "#";
+  }
+
+  5% {
+    content: ".#";
+  }
+
+  10% {
+    content: "^{3";
+  }
+
+  15% {
+    content: "-!#x";
+  }
+
+  20% {
+    content: "#$_$6";
+  }
+
+  25% {
+    content: "№:0/*#";
+  }
+
+  30% {
+    content: "#{+.:H:";
+  }
+
+  35% {
+    content: "@}-?:A:";
+  }
+
+  40% {
+    content: "?{4@%:C:";
+
+  }
+
+  45% {
+    content: "=.,^!%:K:";
+
+  }
+
+  50% {
+    content: "?2@%#&:E:";
+  }
+
+  55% {
+    content: "\;1}]+~R";
+  }
+
+  60% {
+    content: "?{%:%=";
+
+  }
+
+  65% {
+    content: "|{f[4%";
+  }
+
+  70% {
+    content: "{4%0%";
+  }
+
+  75% {
+    content: "'1_0<";
+  }
+
+  80% {
+    content: "{0%*";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'#";
+    right: 0;
+  }
+
+  90% {
+    content: "%#$";
+    right: 0;
+  }
+
+  95% {
+    content: "@!";
+    right: 0;
+  }
+
+  100% {
+    content: "";
+    right: 0;
+  }
 }

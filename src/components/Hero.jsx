@@ -1,16 +1,17 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import heroimg from '../assets/2.png';
+import resume from '../../public/KushalPipaliya_Resume.pdf';
 import { styles } from "./styles";
 
 const Hero = () => {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 300], [0, 50]); // Adjust the range and values as needed
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]); // Adjust the range and values as needed
+  const y = useTransform(scrollY, [0, 300], [0, 50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
     <section className="relative w-full mx-auto">
       <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`main absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <motion.div
@@ -30,23 +31,35 @@ const Hero = () => {
         <div>
           <motion.h1
             className={`${styles.heroHeadText} text-white`}
-            style={{ y, opacity }}
-            initial={{ y: 50, opacity: 0 }} // Start with initial state
-            animate={{ y: 0, opacity: 1 }} // Animate to final state
-            transition={{ duration: 1, ease: "easeOut" }} // Transition properties
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
           >
             Hi, I'm <span className='text-[#158808]'>Kushal</span>
           </motion.h1>
+
           <motion.p
             className={`${styles.heroSubText} mt-2 text-white-100`}
-            style={{ y, opacity }}
-            initial={{ y: 30, opacity: 0 }} // Start with initial state
-            animate={{ y: 0, opacity: 1 }} // Animate to final state
-            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }} // Transition properties
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
           >
-            I develop web-dev and <br className='sm:block hidden' />
-            ensure cyber security
+            I specialize in <span className='text-[#158808]'>cybersecurity</span> <br className='sm:block hidden' />
+            and <span className='text-[#158808]'>web design</span>.
           </motion.p>
+
+          <motion.a href={resume}
+            className={`${styles.heroSubText} `}
+            style={{ y, opacity }}
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1.8 }} download="Kushal_Resume.pdf">
+            <button className="ui-btn">
+              <span>
+                Download Resume
+              </span>
+            </button>
+          </motion.a>
         </div>
       </div>
 
@@ -75,7 +88,7 @@ const Hero = () => {
           </div>
         </a>
       </div>
-    </section>
+    </section >
   );
 };
 

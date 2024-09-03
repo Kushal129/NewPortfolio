@@ -35,10 +35,11 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt='logo' className='w-16 h-16 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex'>
-            Kushal&nbsp;
-            <span className='sm:block hidden'>| Cyber with Web-Developer</span>
+          <p className='text-white text-xl font-bold cursor-pointer flex'>&nbsp;
+            <span className='hidden md:inline'>| Cyber Security with Web-Developer</span>
+            <span className='inline md:hidden'>| Cyber&Web-Dev</span>
           </p>
+
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>

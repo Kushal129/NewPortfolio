@@ -6,7 +6,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
 const Experience = lazy(() => import('./components/Experience'));
-const Feedbacks = lazy(() => import('./components/Feedbacks'));
+// const Feedbacks = lazy(() => import('./components/Feedbacks'));
 const Hero = lazy(() => import('./components/Hero'));
 const Navbar = lazy(() => import('./components/Navbar'));
 const Tech = lazy(() => import('./components/Tech'));

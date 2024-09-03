@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
+import "../../src/index.css";
 
 const Tech = () => {
+  const techRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-up");
+        }
+      });
+    });
+
+    techRefs.current.forEach((tech) => observer.observe(tech));
+
+    return () => {
+      techRefs.current.forEach((tech) => observer.unobserve(tech));
+    };
+  }, []);
+
   return (
     <div className="flex flex-wrap justify-center gap-8 p-6 bg-cover bg-center">
-      {technologies.map((technology) => (
+      {technologies.map((technology, index) => (
         <div
           key={technology.name}
+          ref={(el) => (techRefs.current[index] = el)}
           className="flex flex-col items-center justify-center p-4 border border-black-200 rounded-lg bg-primary shadow-card hover:shadow-lg transition-shadow duration-300 transform hover:scale-105"
         >
           <img
