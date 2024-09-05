@@ -1,4 +1,6 @@
 import { Html, useProgress } from "@react-three/drei";
+import React from "react";
+import './Loader.css'
 
 const CanvasLoader = () => {
   const { progress } = useProgress();
@@ -13,17 +15,17 @@ const CanvasLoader = () => {
         flexDirection: "column",
       }}
     >
-      <span className='canvas-loader'></span>
-      <p
-        style={{
-          fontSize: 14,
-          color: "#F1F1F1",
-          fontWeight: 800,
-          marginTop: 40,
-        }}
-      >
-        {progress.toFixed(2)}%
-      </p>
+      <div className="terminal-loader">
+        <div className="terminal-header">
+          <div className="terminal-title">Status</div>
+          <div className="terminal-controls">
+            <div className="control close"></div>
+            <div className="control minimize"></div>
+            <div className="control maximize"></div>
+          </div>
+        </div>
+        <div className="text">Loading... {progress.toFixed(2)}%</div>
+      </div>
     </Html>
   );
 };

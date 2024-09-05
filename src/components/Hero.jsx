@@ -2,14 +2,32 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import heroimg from '../assets/2.png';
 import resume from '../../public/KushalPipaliya_Resume.pdf';
 import { styles } from "./styles";
+import { useEffect, useState } from "react";
+
 
 const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, 50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once to set the initial state
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section className="relative w-full mx-auto">
+
       <div
         className={`main absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -45,16 +63,16 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
           >
             I specialize in <span className='text-[#158808]'>cybersecurity</span> <br className='sm:block hidden' />
-            and <span className='text-[#158808]'>web design</span>.
+            and <span className='text-[#158808]'>web design</span>
           </motion.p>
 
           <motion.a href={resume}
-            className={`${styles.heroSubText} `}
+            className={`${styles.heroSubText} ${isMobile ? 'flex justify-center items-center' : ''}`}
             style={{ y, opacity }}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.8 }} download="Kushal_Resume.pdf">
-            <button className="ui-btn">
+            <button className={`ui-btn ${isMobile ? 'mt-[6rem]' : ''}`}>
               <span>
                 Download Resume
               </span>
@@ -70,6 +88,7 @@ const Hero = () => {
           className="lg:mt-[180px] lg:w-full lg:h-full m-[200px] w-full h-full object-cover lg:object-contain"
         />
       </div>
+
 
       <div className='absolute bottom-1 w-full flex justify-center items-center md:hidden'>
         <a href='#about'>
