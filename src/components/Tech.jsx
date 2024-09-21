@@ -35,7 +35,7 @@ const Tech = () => {
             alt={technology.name}
             className="w-20 h-20 object-contain mb-2"
           />
-          <p className="text-lg font-semibold text-white-100">{technology.name}</p>
+          <p className="text-lg font-semibold text-secondary">{technology.name}</p>
         </div>
       ))}
     </div>

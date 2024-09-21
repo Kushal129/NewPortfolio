@@ -44,6 +44,10 @@ export const navLinks = [
     title: "Work",
   },
   {
+    id: "projects",
+    title: "Projects",
+  },
+  {
     id: "contact",
     title: "Contact",
   },
@@ -203,6 +207,36 @@ const testimonials = [
   },
 ];
 
+const cyberProjects = [
+  {
+    name: "Custom CLI Tool",
+    description:
+      "A command-line interface (CLI) tool developed for various utility tasks, showcasing my ability to create efficient and user- friendly CLI applications.",
+    tags: [
+      {
+        name: "Python",
+        color: "yellow-text-gradient",
+      },
+    ],
+    image: cli,
+    source_code_link: "https://github.com/Kushal129/",
+  },
+  {
+    name: "Python Projects",
+    description:
+      "A collection of Python projects demonstrating various functionalities and applications, from automation scripts to data analysis.",
+    tags: [
+      {
+        name: "Python",
+        color: "yellow-text-gradient",
+      },
+    ],
+    image: pythonP,
+    source_code_link: "https://github.com/Kushal129/",
+  },
+
+];
+
 const projects = [
   {
     name: "Barcode Generator",
@@ -300,32 +334,8 @@ const projects = [
     source_code_link: "https://github.com/Kushal129/SmartLearningWithKHP",
     live_preview_link: "https://smartlearningwithkhp.netlify.app/"
   },
-  {
-    name: "Custom CLI Tool",
-    description:
-      "A command-line interface (CLI) tool developed for various utility tasks, showcasing my ability to create efficient and user- friendly CLI applications.",
-    tags: [
-      {
-        name: "Python",
-        color: "yellow-text-gradient",
-      },
-    ],
-    image: cli,
-    source_code_link: "https://github.com/Kushal129/",
-  },
-  {
-    name: "Python Projects",
-    description:
-      "A collection of Python projects demonstrating various functionalities and applications, from automation scripts to data analysis.",
-    tags: [
-      {
-        name: "Python",
-        color: "yellow-blue-text-gradient",
-      },
-    ],
-    image: pythonP,
-    source_code_link: "https://github.com/Kushal129/",
-  },
+
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+
+export { services, technologies, experiences, testimonials, projects, cyberProjects };

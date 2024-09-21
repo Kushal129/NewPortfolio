@@ -63,7 +63,7 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
           >
             I specialize in <span className='text-[#158808]'>cybersecurity</span> <br className='sm:block hidden' />
-            and <span className='text-[#158808]'>web design</span>
+            and <span className='text-[#158808]'>web devloper</span>
           </motion.p>
 
           <motion.a href={resume}
