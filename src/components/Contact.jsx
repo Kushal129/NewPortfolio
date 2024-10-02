@@ -34,8 +34,8 @@ const Contact = () => {
       toast.error("All fields are required!", {
         style: {
           background: "black",
-          border: "1px solid #a2c49d",
-          color: "#a2c49d",
+          border: "1px solid #377405",
+          color: "#377405",
         },
       });
       return;
@@ -74,8 +74,8 @@ const Contact = () => {
         toast.success("Thank you! I will get back to you as soon as possible.", {
           style: {
             background: "black",
-            border: "1px solid #a2c49d",
-            color: "#a2c49d",
+            border: "1px solid #377405",
+            color: "#377405",
           },
         });
 
@@ -91,8 +91,8 @@ const Contact = () => {
         toast.error("Ahh, something went wrong. Please try again.", {
           style: {
             background: "black",
-            border: "1px solid #a2c49d",
-            color: "#a2c49d",
+            border: "1px solid #377405",
+            color: "#377405",
           },
         });
       });
@@ -121,7 +121,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your good name?"
-              className='bg-transparent border-[1px] border-[#a2c49d] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
+              className='bg-transparent border-[1px] border-[#377405] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -132,7 +132,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your web address?"
-              className='bg-transparent border-[1px] border-[#a2c49d] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
+              className='bg-transparent border-[1px] border-[#377405] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -143,13 +143,13 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder='What you want to say?'
-              className='bg-transparent border-[1px] border-[#a2c49d] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
+              className='bg-transparent border-[1px] border-[#377405] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
             />
           </label>
 
           <button
             type='submit'
-            className='bg- py-3 px-8 rounded-xl border-[1px] border-[#a2c49d] w-full text-white font-bold hover:bg-secondary hover:text-black'
+            className='bg- py-3 px-8 rounded-xl border-[1px] border-[#377405] w-full text-white font-bold hover:bg-secondary hover:text-black'
           >
             {loading ? "Sending..." : "Send"}
           </button>
