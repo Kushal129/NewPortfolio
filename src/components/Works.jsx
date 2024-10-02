@@ -68,8 +68,14 @@ const Works = () => {
   return (
     <section className="py-5 sm:py-10 px-5 mb-10 sm:px-10">
       <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <h2 className=' font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center text-secondary mb-3'>Projects.</h2>
+        <p className={`${styles.sectionSubText} text-center`}>
+          Explore my work in web development and cybersecurity.
+        </p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>
+          Projects.
+        </h2>
       </motion.div>
+
 
       <div className='flex flex-col sm:flex-row justify-center lg:mt-8 space-x-0 sm:space-x-4 mb-6'>
         <button

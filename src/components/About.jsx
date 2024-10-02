@@ -46,8 +46,7 @@ const About = () => {
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-        I'am a cybersecurity specialist with a strong foundation in web development. I excel at creating robust, secure, and user-centric applications. My expertise lies in developing advanced cybersecurity tools and projects that address real-world challenges. While I have a solid background in using modern web technologies and frameworks to build responsive and engaging websites, my primary focus is on integrating security into every aspect of development. I am committed to solving complex problems and continuously advancing my skills through hands-on experience and learning. Let's work together to bring your ideas to life!
+      >I am a cybersecurity enthusiast with a solid foundation in web development. I focus on building secure, user-friendly applications while addressing real-world cybersecurity challenges. My skills include creating advanced tools that enhance security and developing responsive websites using modern technologies and frameworks. I am dedicated to integrating security at every stage of the development process. Let's collaborate to turn your ideas into reality!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

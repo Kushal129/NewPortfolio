@@ -1,38 +1,4 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  barcode,
-  bpms,
-  ams,
-  cli,
-  slwkhp,
-  pythonP,
-  perfume,
-  windowsSecurity,
-  kaliLinux,
-  kaliLinuxw,
-  cybersecurityTools,
-  scripting,
-  python,
-  nmap,
-  wireshark,
-  metasploit,
-  burpSuite,
-
-} from "../assets";
+import * as Assets from "../assets";
 
 export const navLinks = [
   {
@@ -49,133 +15,117 @@ export const navLinks = [
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "Ping Me",
   },
 ];
 
 const services = [
   {
     title: "Web Developer",
-    icon: web,
+    icon: Assets.web,
   },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
+  // {
+  //   title: "React Native Developer",
+  //   icon: Assets.mobile,
+  // },
   {
     title: "Backend Developer",
-    icon: backend,
+    icon: Assets.backend,
   },
   {
     title: "Cybersecurity Analyst",
-    icon: creator,
+    icon: Assets.creator,
   },
 ];
 
 const technologies = [
 
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
+  // {
+  //   name: "HTML 5",
+  //   icon: Assets.html,
+  // },
+  // {
+  //   name: "CSS 3",
+  //   icon: Assets.css,
+  // },
+  // {
+  //   name: "JavaScript",
+  //   icon: Assets.javascript,
+  // },
   {
     name: "React JS",
-    icon: reactjs,
+    icon: Assets.reactjs,
   },
   {
     name: "Tailwind CSS",
-    icon: tailwind,
+    icon: Assets.tailwind,
   },
   {
     name: "git",
-    icon: git,
+    icon: Assets.git,
   },
   // Cybersecurity technologies
   {
     name: "Windows Security",
-    icon: windowsSecurity,
+    icon: Assets.windowsSecurity,
   },
-  {
-    name: "Kali Linux",
-    icon: kaliLinuxw,
-  },
+  // {
+  //   name: "Kali Linux",
+  //   icon: Assets.kaliLinux,
+  // },
   {
     name: "Cybersecurity Tools",
-    icon: cybersecurityTools,
+    icon: Assets.cybersecurityTools,
   },
   {
     name: "Base Scripting",
-    icon: scripting,
+    icon: Assets.scripting,
   },
   {
     name: "Python",
-    icon: python,
+    icon: Assets.python,
   },
-  {
-    name: "Nmap",
-    icon: nmap,
-  },
-  {
-    name: "Wireshark",
-    icon: wireshark,
-  },
-  {
-    name: "Metasploit",
-    icon: metasploit,
-  },
-  {
-    name: "Burp Suite",
-    icon: burpSuite,
-  },
+  // {
+  //   name: "Nmap",
+  //   icon: Assets.nmap,
+  // },
+  // {
+  //   name: "Wireshark",
+  //   icon: Assets.wireshark,
+  // },
+  // {
+  //   name: "Metasploit",
+  //   icon: Assets.metasploit,
+  // },
+  // {
+  //   name: "Burp Suite",
+  //   icon: Assets.burpSuite,
+  // },
 ];
-
 
 const experiences = [
   {
-    title: "PHP Developer",
-    company_name: "Tech Innovators Ltd.",
-    icon: "https://s3-eu-west-1.amazonaws.com/tpd/logos/64dc6a8abb8fcb6fa88fc404/0x0.png",
-    iconBg: "#ffff",
-    date: "March 2021 - August 2022",
+    title: "Full-Stack Web Developer & Cybersecurity Enthusiast",
+    subtitle: "Self-Taught | 2020 - Present",
+    type: "web",
     points: [
-      "Developed and maintained dynamic web applications using PHP and MySQL.",
-      "Integrated third-party APIs to enhance application functionality.",
-      "Optimized application performance and conducted code reviews.",
-      "Collaborated with frontend developers to ensure seamless integration of user-facing elements."
+      "Developed and launched practical, real-world web applications, actively used by diverse users.",
+      "Expertise in React.js, Tailwind CSS for responsive design, and backend integration with Firebase and SQL databases.",
+      "Created user-friendly projects that gained recognition for their simplicity, efficiency, and real-world relevance.",
+      "Built custom cybersecurity tools for network scanning and analysis, enhancing online security measures.",
+      "Continuously learning and contributing to open-source projects, with a growing focus on cybersecurity advancements."
     ]
   },
   {
-    title: "Full Stack Developer",
-    company_name: "Creative Solutions",
-    icon: "https://s.tmimgcdn.com/scr/1200x750/288200/creative-solutions-logo-template_288281-original.jpg",
-    iconBg: "#e8e8e8",
-    date: "September 2022 - 2024",
+    title: "Cybersecurity Tool Developer",
+    subtitle: "Independent Projects | 2022 - Present",
+    type: "security",
     points: [
-      "Designed and developed both frontend and backend features using React.js.",
-      "Implemented RESTful APIs and integrated them with various client-side applications.",
-      "Ensured high performance and responsiveness of applications across different devices and platforms.",
-      "Led a team of junior developers and participated in agile development processes."
-    ]
-  },
-  {
-    title: "Cybersecurity Analyst",
-    company_name: "Fortify Security Group",
-    icon: "https://expertinsights.com/insights/wp-content/uploads/2023/10/Group-151.png",
-    iconBg: "#ffff",
-    date: "March 2024 - Present",
-    points: [
-      "Conducted security assessments and vulnerability scans to identify potential threats.",
-      "Developed and implemented security policies and procedures to safeguard sensitive information.",
-      "Monitored network traffic and analyzed security incidents to prevent breaches.",
-      "Collaborated with IT teams to ensure compliance with industry standards and regulations."
+      "Designed advanced tools for threat detection and vulnerability analysis using multiple technologies.",
+      "Automated network scanning and data analysis processes to significantly reduce response times.",
+      "Engaged with online security communities to share knowledge, improve tools, and promote security best practices.",
+      "Developed secure, real-world applications, recognized for their robustness and practical utility by users and peers.",
+      "Created a cybersecurity learning website where users can easily learn from basic to advanced concepts, making cybersecurity accessible to all."
     ]
   }
 ];
@@ -218,7 +168,7 @@ const cyberProjects = [
         color: "yellow-text-gradient",
       },
     ],
-    image: cli,
+    image: Assets.cli,
     source_code_link: "https://github.com/Kushal129/",
   },
   {
@@ -231,8 +181,29 @@ const cyberProjects = [
         color: "yellow-text-gradient",
       },
     ],
-    image: pythonP,
+    image: Assets.pythonP,
     source_code_link: "https://github.com/Kushal129/",
+  },
+  {
+    name: "Phishing Email Detection System",
+    description:
+      "A System designed to detect phishing emails. It analyzes email content, checks for suspicious URLs, and identifies phishing indicators using Datas. This project also includes an online teaser for advanced scanning capabilities, allowing users to test the system's efficiency in real-time.",
+    tags: [
+      {
+        name: "Python",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: Assets.peds,
+    source_code_link: "https://github.com/Kushal129/Phishing_Email_Detection_System",
   },
 
 ];
@@ -252,7 +223,7 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: barcode,
+    image: Assets.barcode,
     source_code_link: "https://github.com/",
     live_preview_link: "https://barcodegeneratorkhp.netlify.app/"
   },
@@ -274,7 +245,7 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: bpms,
+    image: Assets.bpms,
     source_code_link: "https://github.com/Kushal129/Bus-Pass-Management-System",
   },
   {
@@ -291,7 +262,7 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: ams,
+    image: Assets.ams,
     source_code_link: "https://github.com/Kushal129/Auction_Management_System/",
   },
   {
@@ -308,7 +279,7 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: perfume,
+    image: Assets.perfume,
     source_code_link: "https://github.com/Kushal129/PerfumeStoreFrontend",
     live_preview_link: "https://examplehkperfumestore.netlify.app/"
   },
@@ -330,7 +301,7 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: slwkhp,
+    image: Assets.slwkhp,
     source_code_link: "https://github.com/Kushal129/SmartLearningWithKHP",
     live_preview_link: "https://smartlearningwithkhp.netlify.app/"
   },

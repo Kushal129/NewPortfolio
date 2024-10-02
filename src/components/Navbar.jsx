@@ -36,8 +36,8 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-16 h-16 object-contain' />
           <p className='text-white text-xl font-bold cursor-pointer flex'>&nbsp;
-            <span className='hidden md:inline'>| Cyber Security with Web-Developer</span>
-            <span className='inline md:hidden'>| Cyber&Web-Dev</span>
+            <span className='text-secondary hover:text-white hidden md:inline'>| Cybersecurity & Web Development</span>
+            <span className='text-secondary hover:text-white inline md:hidden'>| Cyber & Web Dev</span>
           </p>
 
         </Link>

@@ -22,7 +22,6 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-
 import barcode from "./barcode.png";
 import bpms from "./bpms.png";
 import ams from "./ams.png";
@@ -30,13 +29,12 @@ import slwkhp from "./slwkhp.png";
 import perfume from "./perfume.png";
 import cli from "./cli.png";
 import pythonP from "./pythonP.png";
+import peds from "./peds.png";
 
+
+import kaliLinux from "./tech/kaliwhite.png";
 import windowsSecurity from "./tech/windowsSecurity.png";
-
-import kaliLinux from "./tech/kaliLinux.png";
-import kaliLinuxw from "./tech/kaliLinuxw.png";
 import cybersecurityTools from "./tech/cybersecurityTools.png";
-
 import scripting from "./tech/scripting.png";
 
 import python from "./tech/python.png";
@@ -44,7 +42,6 @@ import nmap from "./tech/nmap.png";
 import wireshark from "./tech/wireshark.png";
 import metasploit from "./tech/metasploit.png";
 import burpSuite from "./tech/burpSuite.png";
-
 
 export {
   logo,
@@ -59,10 +56,7 @@ export {
   docker,
   figma,
   git,
-  webpreview,
   html,
-  cli,
-  pythonP,
   javascript,
   mongodb,
   nodejs,
@@ -76,11 +70,13 @@ export {
   ams,
   slwkhp,
   perfume,
-  windowsSecurity,
+  cli,
+  pythonP,
   kaliLinux,
-  kaliLinuxw,
+  windowsSecurity,
   cybersecurityTools,
   scripting,
+  peds,
   python,
   nmap,
   wireshark,

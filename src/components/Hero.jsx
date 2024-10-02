@@ -4,7 +4,6 @@ import resume from '../../public/KushalPipaliya_Resume.pdf';
 import { styles } from "./styles";
 import { useEffect, useState } from "react";
 
-
 const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, 50]);
@@ -27,7 +26,6 @@ const Hero = () => {
 
   return (
     <section className="relative w-full mx-auto">
-
       <div
         className={`main absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -62,8 +60,8 @@ const Hero = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
           >
-            I specialize in <span className='text-[#158808]'>cybersecurity</span> <br className='sm:block hidden' />
-            and <span className='text-[#158808]'>web devloper</span>
+            I focus on <span className='text-[#158808]'>Cybersecurity</span> <br className='sm:block hidden' />
+            and <span className='text-[#158808]'>Web Development</span>
           </motion.p>
 
           <motion.a href={resume}
@@ -71,11 +69,11 @@ const Hero = () => {
             style={{ y, opacity }}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.8 }} download="Kushal_Resume.pdf">
+            transition={{ duration: 1, ease: "easeOut", delay: 1.8 }}
+            download="Kushal_Resume.pdf"
+          >
             <button className={`ui-btn ${isMobile ? 'mt-[6rem]' : ''}`}>
-              <span>
-                Download Resume
-              </span>
+              <span>Download Resume</span>
             </button>
           </motion.a>
         </div>
@@ -85,10 +83,10 @@ const Hero = () => {
         <img
           src={heroimg}
           alt="Hero Image"
+          loading="eager"
           className="lg:mt-[180px] lg:w-full lg:h-full m-[200px] w-full h-full object-cover lg:object-contain"
         />
       </div>
-
 
       <div className='absolute bottom-1 w-full flex justify-center items-center md:hidden'>
         <a href='#about'>
@@ -107,7 +105,7 @@ const Hero = () => {
           </div>
         </a>
       </div>
-    </section >
+    </section>
   );
 };
 
