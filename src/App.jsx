@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Loading from './components/WebLoading';
 import ErrorBoundary from './components/ErrorBoundary';
+import SocialLinks from './components/SocialLinks'; // Import the new component
 
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -19,7 +20,7 @@ const App = () => {
         <BrowserRouter>
           <Suspense fallback={<Loading />}>
             <div className="relative z-0 bg-primary">
-              <div className=" bg-cover bg-no-repeat bg-center">
+              <div className="bg-cover bg-no-repeat bg-center">
                 <Navbar />
                 <Hero />
               </div>
@@ -32,6 +33,7 @@ const App = () => {
                 <Contact />
                 <StarsCanvas />
               </div>
+              <SocialLinks /> {/* Add the SocialLinks component here */}
             </div>
           </Suspense>
         </BrowserRouter>
