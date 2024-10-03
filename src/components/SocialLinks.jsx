@@ -18,7 +18,7 @@ const SocialLinks = () => {
                 {isOpen ? <FaRegWindowClose /> : <FaLink />}
             </button>
             {isOpen && (
-                <div className="mt-2 lg:bg-transparent backdrop-blur-md bg-[#ffffff0d] text-secondary p-4 rounded-lg shadow-lg transition-transform duration-300 transform translate-y-0 opacity-100 scale-100"
+                <div className="mt-2 lg:bg-transparent backdrop-blur-md bg-[#ffffff1b] text-secondary p-4 rounded-lg shadow-lg transition-transform duration-300 transform translate-y-0 opacity-100 scale-100"
                     style={{ transition: 'transform 0.3s ease, opacity 0.3s ease' }}
                 >
                     <ul className="flex flex-col space-y-2">

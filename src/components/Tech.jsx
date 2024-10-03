@@ -11,14 +11,26 @@ const Tech = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("fade-in-up");
+          // Optionally unobserve the element if you only want the animation once
+          observer.unobserve(entry.target);
         }
       });
     });
 
-    techRefs.current.forEach((tech) => observer.observe(tech));
+    // Observe each element if it's a valid DOM element
+    techRefs.current.forEach((tech) => {
+      if (tech) {
+        observer.observe(tech);
+      }
+    });
 
     return () => {
-      techRefs.current.forEach((tech) => observer.unobserve(tech));
+      // Unobserve each element if it's a valid DOM element
+      techRefs.current.forEach((tech) => {
+        if (tech) {
+          observer.unobserve(tech);
+        }
+      });
     };
   }, []);
 

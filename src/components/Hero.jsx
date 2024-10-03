@@ -17,7 +17,7 @@ const Hero = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Call once to set the initial state
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -64,18 +64,22 @@ const Hero = () => {
             and <span className='text-[#158808]'>Web Development</span>
           </motion.p>
 
-          <motion.a href={resume}
-            className={`${styles.heroSubText} ${isMobile ? 'flex justify-center items-center' : ''}`}
+          <motion.div
+            className={`${styles.heroSubText} ${isMobile ? 'flex lg:justify-center lg:items-center' : ''}`}
             style={{ y, opacity }}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.8 }}
-            download="Kushal_Resume.pdf"
           >
-            <button className={`ui-btn ${isMobile ? 'mt-[6rem]' : ''}`}>
-              <span>Download Resume</span>
+            <button className="ui-btn mt-4">
+              <a href={resume} download="Kushal_Resume.pdf">
+                <span>Download Resume</span>
+              </a>
             </button>
-          </motion.a>
+
+          </motion.div>
+
+
         </div>
       </div>
 

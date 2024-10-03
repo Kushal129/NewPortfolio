@@ -320,14 +320,14 @@ html {
 .ui-btn {
   --btn-default-bg: transparent;
   --btn-padding: 15px 20px;
-  --btn-hover-bg: #000000;
+  --btn-hover-bg: #00000020;
   --btn-transition: .3s;
   --btn-letter-spacing: .1rem;
   --btn-animation-duration: 1.2s;
   --btn-shadow-color: rgba(0, 0, 0, 0.137);
   --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
   --hover-btn-color: #3f8c00;
-  --default-btn-color: #0b5503;
+  --default-btn-color: #106c06;
   --font-size: 13px;
   --font-weight: 400;
   --font-family: Menlo, Roboto Mono, monospace;
