@@ -43,6 +43,7 @@ const Contact = () => {
 
     setLoading(true);
 
+    // Main email
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -57,6 +58,7 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
+        // Auto-reply email
         return emailjs.send(
           import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
           "template_buvyoc3",
@@ -64,7 +66,8 @@ const Contact = () => {
             from_name: "Kushal Pipaliya",
             to_name: form.name,
             from_email: "21bmiit129@gmail.com",
-            message: form.message,
+            to_email: form.email,
+            message: "Thank you for reaching out! I will get back to you as soon as possible.",
           },
           import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
         );
