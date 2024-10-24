@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast, Toaster } from 'react-hot-toast';
@@ -16,6 +16,14 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [lastSubmissionTime, setLastSubmissionTime] = useState(null);
+
+  useEffect(() => {
+    const storedTime = localStorage.getItem('lastSubmissionTime');
+    if (storedTime) {
+      setLastSubmissionTime(parseInt(storedTime, 10));
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { target } = e;
@@ -30,8 +38,31 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const currentTime = Date.now();
+    const oneHour = 60 * 60 * 1000;
+
+    if (lastSubmissionTime && currentTime - lastSubmissionTime < oneHour) {
+      toast.error("You can only submit once per hour. Please try again later.", {
+        position: "bottom-center",
+        style: {
+          background: "#1f1f1f",
+          color: "#fff",
+          border: "1px solid #ff4b4b",
+          borderRadius: "8px",
+          padding: "16px",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        },
+        iconTheme: {
+          primary: '#ff4b4b',
+          secondary: '#fff',
+        },
+      });
+      return;
+    }
+
     if (!form.name || !form.email || !form.message) {
       toast.error("All fields are required!", {
+        position: "bottom-center",
         style: {
           background: "#1f1f1f",
           color: "#fff",
@@ -65,23 +96,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
-        // Auto-reply email
-        return emailjs.send(
-          import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-          "template_buvyoc3",
-          {
-            from_name: "Kushal Pipaliya",
-            to_name: form.name,
-            from_email: "21bmiit129@gmail.com",
-            to_email: form.email,  // Use the submitted email for auto-reply
-            message: "Thank you for reaching out! I will get back to you as soon as possible.",
-          },
-          import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-        );
-      })
-      .then(() => {
         setLoading(false);
         toast.success("Thank you! I will get back to you as soon as possible.", {
+          position: "bottom-center",
           style: {
             background: "#1f1f1f",
             color: "#fff",
@@ -101,11 +118,15 @@ const Contact = () => {
           email: "",
           message: "",
         });
+
+        setLastSubmissionTime(currentTime);
+        localStorage.setItem('lastSubmissionTime', currentTime.toString());
       })
       .catch((error) => {
         setLoading(false);
         console.error(error);
         toast.error("Ahh, something went wrong. Please try again.", {
+          position: "bottom-center",
           style: {
             background: "#1f1f1f",
             color: "#fff",
@@ -128,16 +149,6 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-transparent p-8 rounded-2xl'
       >
-        <Toaster 
-          position="bottom-center"
-          toastOptions={{
-            duration: 5000,
-            style: {
-              background: '#1f1f1f',
-              color: '#fff',
-            },
-          }}
-        />
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Ping Me.</h3>
 
@@ -195,6 +206,16 @@ const Contact = () => {
       >
         <EarthCanvas />
       </motion.div>
+      <Toaster 
+        position="bottom-center"
+        toastOptions={{
+          duration: 5000,
+          style: {
+            background: '#1f1f1f',
+            color: '#fff',
+          },
+        }}
+      />
     </div>
   );
 };
