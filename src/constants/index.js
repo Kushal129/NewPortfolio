@@ -2,19 +2,19 @@ import * as Assets from "../assets";
 
 export const navLinks = [
   {
-    id: "about",
+    id: "About",
     title: "About",
   },
   {
-    id: "work",
+    id: "Work",
     title: "Work",
   },
   {
-    id: "projects",
+    id: "Projects",
     title: "Projects",
   },
   {
-    id: "contact",
+    id: "Contact",
     title: "Ping Me",
   },
 ];

@@ -8,7 +8,7 @@ const certifications = [
   { title: "Cyber Threat Intelligence 101", source: "arcX" },
   { title: "Cybersecurity Job Simulation", source: "Mastercard" },
   { title: "SQL Basic", source: "HackerRank" },
-  { title: "Python Basic", source: "HackerRank" },
+//   { title: "Python Basic", source: "HackerRank" },
   { title: "Python Intermediate", source: "HackerRank" },
   { title: "React Basic", source: "HackerRank" },
   { title: "Problem Solving Basic", source: "HackerRank" },
@@ -21,8 +21,6 @@ const certifications = [
   { title: "Python", source: "LinkedIn Skill Assessment" },
   { title: "JavaScript", source: "LinkedIn Skill Assessment" },
   { title: "MySQL", source: "LinkedIn Skill Assessment" },
-  { title: "MongoDB", source: "LinkedIn Skill Assessment" },
-  { title: "Node.js", source: "LinkedIn Skill Assessment" },
   { title: "React", source: "LinkedIn Skill Assessment" },
   { title: "React Native", source: "LinkedIn Skill Assessment" },
   { title: "Git", source: "LinkedIn Skill Assessment" },
@@ -68,4 +66,4 @@ const Certification = () => {
   );
 };
 
-export default SectionWrapper(Certification, "certification");
+export default SectionWrapper(Certification, "Certification");
