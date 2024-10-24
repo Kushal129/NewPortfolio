@@ -1,113 +1,159 @@
-import React, { useState } from "react";
+  import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc";
 import { projects, cyberProjects } from "../constants";
 import { styles } from "./styles";
 import { github } from "../assets";
-import { IoMdClose } from "react-icons/io";
-import webbutonimg from '../assets/webbtn.jpg'
+import { FaGlobe } from "react-icons/fa";
+import { textVariant, fadeIn } from "../utils/motion";
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link, live_preview_link }) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link, live_preview_link }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const toggleDescription = (e) => {
+    e.stopPropagation();
+    setShowFullDescription(!showFullDescription);
+  };
+
+  const truncatedDescription = description.length > 100 
+    ? `${description.substring(0, 100)}...` 
+    : description;
+
   return (
-    <Tilt options={{ max: 45, scale: 1, speed: 450 }} className='p-5 rounded-2xl w-full max-w-xs'>
-      <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.2, duration: 0.5 }} className='relative w-full h-[230px]'>
-        <img src={image} alt='project_image' className='w-full h-full object-cover rounded-2xl' />
-        <div className='absolute inset-0 flex justify-between m-3 card-img_hover'>
+    <motion.div
+      className="bg-primary p-5 rounded-2xl sm:w-[360px] w-full min-h-[390px] overflow-hidden relative shadow-card"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileHover={{ scale: 1.03 }}
+      transition={{ duration: 0.3 }}
+    >
+      <img src={image} alt={name} className="w-full h-[200px] object-cover rounded-xl" />
+      <h3 className="mt-4 text-white font-bold text-[22px] truncate">{name}</h3>
+      
+      <motion.div
+        className="absolute inset-0 bg-black bg-opacity-85 backdrop-filter backdrop-blur-sm flex flex-col justify-start items-center p-6 rounded-2xl overflow-y-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
+        transition={{ duration: 0.3 }}
+      >
+        <h3 className="text-white font-bold text-[22px] mb-3">{name}</h3>
+        <p className="text-cardtext text-[14px] text-center mb-2 overflow-y-auto custom-scrollbar">
+          {showFullDescription ? description : truncatedDescription}
+        </p>
+        {description.length > 100 && (
+          <button 
+            onClick={toggleDescription} 
+            className="text-secondary hover:text-white text-sm mb-3"
+          >
+            {showFullDescription ? "Show Less" : "Show More"}
+          </button>
+        )}
+        
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
+          {tags.map((tag) => (
+            <p key={tag.name} className="text-[12px] text-white px-2 py-1 rounded-full bg-black-200 shadow-sm">
+              #{tag.name}
+            </p>
+          ))}
+        </div>
+
+        <div className="flex justify-center space-x-4">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            onClick={() => window.open(source_code_link, "_blank")}
+            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+          >
+            <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
+          </motion.div>
+
           {live_preview_link && (
-            <div onClick={() => window.open(live_preview_link, "_blank")} className='bg-red-700 w-6 h-6 rounded-full flex justify-center items-center cursor-pointer'>
-              <h2 className="text-[10px] text-white">Live</h2>
-            </div>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              href={live_preview_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+            >
+              <FaGlobe className="text-white text-lg" />
+            </motion.a>
           )}
-          <div onClick={() => window.open(source_code_link, "_blank")} className='black-gradient w-8 h-8 rounded-full flex justify-center items-center cursor-pointer'>
-            <img src={github} alt='source code' className='w-1/2 h-1/2 object-contain' />
-          </div>
         </div>
       </motion.div>
-
-      <div className='mt-5'>
-        <h3 className='text-white font-bold text-lg'>{name}</h3>
-        <p className='mt-2 text-secondary text-sm'>{description}</p>
-      </div>
-
-      <div className='mt-4 flex flex-wrap gap-2'>
-        {tags.map((tag) => (
-          <p key={`${name}-${tag.name}`} className={`text-xs ${tag.color}`}>
-            #{tag.name}
-          </p>
-        ))}
-      </div>
-    </Tilt>
+    </motion.div>
   );
 };
 
 const Works = () => {
-  const [activeCategory, setActiveCategory] = useState("web");
-  const [showProjects, setShowProjects] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("all");
 
-  const handleCategoryChange = (category) => {
-    if (activeCategory === category) {
-      setShowProjects(!showProjects);
-    } else {
-      setActiveCategory(category);
-      setShowProjects(true);
-    }
-  };
-
-  const handleCloseProjects = () => {
-    setShowProjects(false);
-  };
-
-  const renderProjects = () => {
-    const currentProjects = activeCategory === "web" ? projects : cyberProjects;
-    return currentProjects.map((project, index) => (
-      <ProjectCard key={`project-${index}`} index={index} {...project} />
-    ));
-  };
+  const filteredProjects = activeCategory === "all"
+    ? [...projects, ...cyberProjects]
+    : activeCategory === "web"
+    ? projects
+    : cyberProjects;
 
   return (
-    <section className="py-5 sm:py-10 px-5 mb-10 sm:px-10">
-      <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          Explore my work in web development and cybersecurity.
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Projects.
-        </h2>
+    <>
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>My work</p>
+        <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
 
-
-      <div className='flex flex-col sm:flex-row justify-center lg:mt-8 space-x-0 sm:space-x-4 mb-6'>
-        <button
-          onClick={() => handleCategoryChange("web")}
-          className='relative inline-block m-2 p-8 lg:text-[10px] text-[13px] tracking-wide text-white bg-cover cursor-pointer transition-all duration-500 rounded-lg border-b border-logo shadow-[inset_0_0_0_0_#153010] perspective hover:translate-y-[-5px] hover:scale-105 hover:rotate-x-[10deg] hover:rotate-y-[10deg] active:scale-90'
-          style={{ backgroundImage: `url(${webbutonimg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      <div className="w-full flex">
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-3 text-secondary text-[15px] sm:text-[17px] max-w-3xl leading-[28px] sm:leading-[30px]"
         >
-          Web Development
-        </button>
-
-        <button
-          onClick={() => handleCategoryChange("cyber")}
-          className='relative inline-block m-2 p-5 lg:text-[15px] text-[16px] tracking-wide text-white bg-cover bg-center bg-no-repeat bg-black cursor-pointer transition-all duration-500 rounded-md border-b border-logo shadow-[inset_0_0_0_0_#153010] perspective hover:translate-y-[-5px] hover:scale-105 hover:rotate-x-[10deg] hover:rotate-y-[10deg] active:scale-90'
-          style={{ backgroundImage: "url('https://cdn.pixabay.com/photo/2014/05/27/23/32/matrix-356024_1280.jpg')" }}
-        >
-          Cybersecurity
-        </button>
-
-
+          Following projects showcases my skills and experience through
+          real-world examples of my work. Each project is briefly described with
+          links to code repositories and live demos in it. It reflects my
+          ability to solve complex problems, work with different technologies,
+          and manage projects effectively.
+        </motion.p>
       </div>
 
-      {showProjects && (
-        <div className='mt-10'>
-          <button onClick={handleCloseProjects} className='text-black-100 px-4 py-2 rounded-lg mb-4 flex items-center'>
-            <IoMdClose className="text-lg mr-2" />
-          </button>
-          <div className='flex flex-wrap gap-5 justify-center'>
-            {renderProjects()}
-          </div>
+      <div className="flex justify-center mt-10 mb-6 sm:mt-12 sm:mb-8">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 bg-tertiary p-2 rounded-full">
+          {["all", "web", "cyber"].map((category) => (
+            <button
+              key={category}
+              className={`py-2 px-4 sm:px-6 rounded-full text-[13px] sm:text-[15px] font-medium transition-colors duration-300 ${
+                activeCategory === category
+                  ? "bg-primary text-white"
+                  : "text-secondary hover:bg-black-200 hover:text-white"
+              }`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
         </div>
-      )}
-    </section>
+      </div>
+
+      <div className="mt-16 sm:mt-20 flex flex-wrap justify-center gap-6 sm:gap-7">
+        {filteredProjects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
+        ))}
+      </div>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #000000;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #3f8c00;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #377405;
+        }
+      `}</style>
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ const Navbar = lazy(() => import('./components/Navbar'));
 const Tech = lazy(() => import('./components/Tech'));
 const Works = lazy(() => import('./components/Works'));
 const StarsCanvas = lazy(() => import('./components/canvas/Stars'));
+const Certification = lazy(() => import('./components/Certification'));
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
               <Experience />
               <Tech />
               <Works />
+              <Certification />
               <div className="relative z-0">
                 <Contact />
                 <StarsCanvas />
