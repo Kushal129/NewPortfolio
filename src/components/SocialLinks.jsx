@@ -26,7 +26,7 @@ const SocialLinks = () => {
                             { icon: <FaGithub />, name: "GitHub", link: "https://www.github.com/Kushal129" },
                             { icon: <FaLinkedin />, name: "LinkedIn", link: "https://www.linkedin.com/in/kushal-pipaliya" },
                             { icon: <FaXTwitter />, name: "Twitter", link: "https://twitter.com/KushalPipaliya5" },
-                            { icon: <FaFacebook />, name: "Facebook", link: "https://www.facebook.com/kushal.pipaliya.12?mibextid=JRoKGi" },
+                            // { icon: <FaFacebook />, name: "Facebook", link: "https://www.facebook.com/kushal.pipaliya.12?mibextid=JRoKGi" },
                         ].map((social, index) => (
                             <li key={index} className="transform transition-transform duration-300 hover:scale-105">
                                 <a

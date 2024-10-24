@@ -33,9 +33,16 @@ const Contact = () => {
     if (!form.name || !form.email || !form.message) {
       toast.error("All fields are required!", {
         style: {
-          background: "black",
+          background: "#1f1f1f",
+          color: "#fff",
           border: "1px solid #377405",
-          color: "#377405",
+          borderRadius: "8px",
+          padding: "16px",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        },
+        iconTheme: {
+          primary: '#377405',
+          secondary: '#fff',
         },
       });
       return;
@@ -66,7 +73,7 @@ const Contact = () => {
             from_name: "Kushal Pipaliya",
             to_name: form.name,
             from_email: "21bmiit129@gmail.com",
-            to_email: form.email,
+            to_email: form.email,  // Use the submitted email for auto-reply
             message: "Thank you for reaching out! I will get back to you as soon as possible.",
           },
           import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -76,9 +83,16 @@ const Contact = () => {
         setLoading(false);
         toast.success("Thank you! I will get back to you as soon as possible.", {
           style: {
-            background: "black",
+            background: "#1f1f1f",
+            color: "#fff",
             border: "1px solid #377405",
-            color: "#377405",
+            borderRadius: "8px",
+            padding: "16px",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          },
+          iconTheme: {
+            primary: '#377405',
+            secondary: '#fff',
           },
         });
 
@@ -93,9 +107,16 @@ const Contact = () => {
         console.error(error);
         toast.error("Ahh, something went wrong. Please try again.", {
           style: {
-            background: "black",
-            border: "1px solid #377405",
-            color: "#377405",
+            background: "#1f1f1f",
+            color: "#fff",
+            border: "1px solid #ff4b4b",
+            borderRadius: "8px",
+            padding: "16px",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          },
+          iconTheme: {
+            primary: '#ff4b4b',
+            secondary: '#fff',
           },
         });
       });
@@ -107,7 +128,16 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-transparent p-8 rounded-2xl'
       >
-        <Toaster position="bottom-center" />
+        <Toaster 
+          position="bottom-center"
+          toastOptions={{
+            duration: 5000,
+            style: {
+              background: '#1f1f1f',
+              color: '#fff',
+            },
+          }}
+        />
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Ping Me.</h3>
 
