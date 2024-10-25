@@ -24,7 +24,7 @@ const CanvasLoader = () => {
             <div className="control maximize"></div>
           </div>
         </div>
-        <div className="text">Loading... {progress.toFixed(2)}%</div>
+        <div className="text">Loading...{progress.toFixed(2)}%</div>
       </div>
     </Html>
   );

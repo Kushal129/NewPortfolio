@@ -210,22 +210,26 @@ const cyberProjects = [
 
 const projects = [
   {
-    name: "Barcode Generator",
+    name: "Smart Learning with KHP",
     description:
-      "A robust barcode generator website built with React.js and Tailwind CSS that can generate over 100 unique barcodes in a single batch. Designed for efficiency and user-friendliness, this tool addresses limitations of existing options and provides a reliable solution for bulk barcode generation.",
+      "A ReactJS and Tailwind CSS-based site focused on cybersecurity learning, providing an interactive platform for users to enhance their skills and knowledge.",
     tags: [
       {
-        name: "React.js",
+        name: "ReactJS",
         color: "blue-text-gradient",
+      },
+      {
+        name: "Javascript",
+        color: "yellow-text-gradient",
       },
       {
         name: "Tailwind CSS",
         color: "blue-text-gradient",
       },
     ],
-    image: Assets.barcode,
-    source_code_link: "https://github.com/",
-    live_preview_link: "https://barcodegeneratorkhp.netlify.app/"
+    image: Assets.slwkhp,
+    source_code_link: "https://github.com/Kushal129/SmartLearningWithKHP",
+    live_preview_link: "https://smartlearningwithkhp.netlify.app/"
   },
   {
     name: "Bus Pass Management System",
@@ -283,30 +287,50 @@ const projects = [
     source_code_link: "https://github.com/Kushal129/PerfumeStoreFrontend",
     live_preview_link: "https://examplehkperfumestore.netlify.app/"
   },
+
+];
+
+const funProjects = [
   {
-    name: "Smart Learning with KHP",
+    name: "Cricket Scoreboard",
     description:
-      "A ReactJS and Tailwind CSS-based site focused on cybersecurity learning, providing an interactive platform for users to enhance their skills and knowledge.",
+      "A fun and practical web app built with React JS and Tailwind CSS for calculating and tracking cricket scores. Features include over entry, ball-by-ball tracking, live score updates, local data storage for reliability, and automatic winner calculation with celebratory animations. New additions include a dark mode option, customizable team names, and a responsive design for mobile devices. Perfect for cricket enthusiasts and casual players alike, now with enhanced user experience and flexibility!",
     tags: [
       {
-        name: "ReactJS",
+        name: "React.js",
         color: "blue-text-gradient",
       },
       {
-        name: "Javascript",
+        name: "Tailwind CSS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "JavaScript",
         color: "yellow-text-gradient",
+      },
+    ],
+    image: Assets.cricket,
+    source_code_link: "https://github.com/Kushal129/Cricket-Score-Board",
+    live_preview_link: "https://cricketscoreboardkhp.netlify.app/"
+  },
+  {
+    name: "Barcode Generator",
+    description:
+      "A robust barcode generator website built with React.js and Tailwind CSS that can generate over 100 unique barcodes in a single batch. Designed for efficiency and user-friendliness, this tool addresses limitations of existing options and provides a reliable solution for bulk barcode generation. Features include customizable barcode types, sizes, and data, as well as options for downloading individual or batch barcodes in various formats.",
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
       },
       {
         name: "Tailwind CSS",
         color: "blue-text-gradient",
       },
     ],
-    image: Assets.slwkhp,
-    source_code_link: "https://github.com/Kushal129/SmartLearningWithKHP",
-    live_preview_link: "https://smartlearningwithkhp.netlify.app/"
+    image: Assets.barcode,
+    source_code_link: "https://github.com/",
+    live_preview_link: "https://barcodegeneratorkhp.netlify.app/"
   },
-
 ];
 
-
-export { services, technologies, experiences, testimonials, projects, cyberProjects };
+export { services, technologies, experiences, testimonials, projects, cyberProjects, funProjects };

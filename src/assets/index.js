@@ -27,6 +27,7 @@ import bpms from "./bpms.png";
 import ams from "./ams.png";
 import slwkhp from "./slwkhp.png";
 import perfume from "./perfume.png";
+import cricket from "./cricket.png";
 import cli from "./cli.png";
 import pythonP from "./pythonP.png";
 import peds from "./peds.png";
@@ -82,4 +83,5 @@ export {
   wireshark,
   metasploit,
   burpSuite,
+  cricket,
 };
