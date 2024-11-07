@@ -76,10 +76,7 @@ const Hero = () => {
                 <span>Download Resume</span>
               </a>
             </button>
-
           </motion.div>
-
-
         </div>
       </div>
 

@@ -49,7 +49,7 @@ const About = () => {
       >I am a cybersecurity enthusiast with a solid foundation in web development. I focus on building secure, user-friendly applications while addressing real-world cybersecurity challenges. My skills include creating advanced tools that enhance security and developing responsive websites using modern technologies and frameworks. I am dedicated to integrating security at every stage of the development process. Let's collaborate to turn your ideas into reality!
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-20 flex justify-center items-center flex-wrap gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

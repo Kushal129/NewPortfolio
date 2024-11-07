@@ -29,13 +29,13 @@ const SocialLinks = () => {
         <div className={`fixed ${isMobile ? 'bottom-4 right-4' : 'bottom-6 right-6'} z-50`}>
             <button
                 onClick={toggleLinks}
-                className={`bg-logo text-white rounded-full ${isMobile ? 'w-10 h-10' : 'w-14 h-14'} flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-12`}
+                className={`bg-logo text-white rounded-full ${isMobile ? 'w-10 h-10' : 'w-12 h-12'} flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-12`}
             >
-                {isOpen ? <FaRegWindowClose size={isMobile ? 18 : 24} /> : <FaLink size={isMobile ? 18 : 24} />}
+                {isOpen ? <FaRegWindowClose size={isMobile ? 18 : 22} /> : <FaLink size={isMobile ? 18 : 22} />}
             </button>
             {isOpen && (
-                <div className={`absolute ${isMobile ? 'bottom-12 right-0' : 'bottom-16 right-0'} bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-3 rounded-lg shadow-xl transition-all duration-300 transform translate-y-0 opacity-100 scale-100`}
-                    style={{ backdropFilter: 'blur(10px)' }}
+                <div className={`absolute ${isMobile ? 'bottom-12 right-0' : 'bottom-16 right-0'} bg-gradient-to-br from-[#0b1707] to-[#00000000] text-white p-3 rounded-lg shadow-xl transition-all duration-300 transform translate-y-0 opacity-100 scale-100`}
+                    style={{ backdropFilter: 'blur(12px)' }}
                 >
                     <ul className={`flex ${isMobile ? 'flex-row space-x-4' : 'flex-col space-y-3'}`}>
                         {socialLinks.map((social, index) => (

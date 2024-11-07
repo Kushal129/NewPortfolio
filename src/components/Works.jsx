@@ -68,11 +68,9 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, live_pr
 };
 
 const Works = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("web");
 
-  const filteredProjects = activeCategory === "all"
-    ? [...projects, ...cyberProjects, ...funProjects]
-    : activeCategory === "web"
+  const filteredProjects = activeCategory === "web"
     ? projects
     : activeCategory === "cyber"
     ? cyberProjects
@@ -97,7 +95,7 @@ const Works = () => {
 
       <div className="flex justify-center mt-10 mb-6 sm:mt-12 sm:mb-8">
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 bg-tertiary p-2 rounded-full">
-          {["all", "web", "cyber", "fun"].map((category) => (
+          {["web", "cyber", "fun"].map((category) => (
             <button
               key={category}
               className={`py-2 px-4 sm:px-6 rounded-full text-[13px] sm:text-[15px] font-medium transition-colors duration-300 ${
