@@ -1,2 +1,4 @@
-# npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser fra mer-motion react-router-dom
+# Portfolio
 
+## Introduction
+Welcome to my portfolio! This repository showcases my projects and skills in web development and cybersecurity. You can view my work live at [https://portfoliobykushal.netlify.app/](https://portfoliobykushal.netlify.app/).

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AnimatedCursor from 'react-animated-cursor';
 import Loading from './components/WebLoading';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -33,11 +33,9 @@ const App = () => {
                 mixBlendMode: "difference",
               }}
               innerStyle={{
-                backgroundColor: "rgb(63, 140, 0, 0.22)",
+                backgroundColor: "rgba(63, 140, 0, 0.22)",
               }}
-              clickables={[
-                'a', 'button', '.link'
-              ]}
+              clickables={['a', 'button', '.link']}
             />
             <div className="relative z-0 bg-primary">
               <div className="bg-cover bg-no-repeat bg-center">

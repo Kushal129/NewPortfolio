@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://portfoliobykushal.netlify.app/</loc>
+    <priority>1.0</priority>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://portfoliobykushal.netlify.app/#About</loc>
+    <priority>0.9</priority>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Work Section -->
+  <url>
+    <loc>https://portfoliobykushal.netlify.app/#Work</loc>
+    <priority>0.9</priority>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://portfoliobykushal.netlify.app/#Projects</loc>
+    <priority>0.9</priority>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Certification Section -->
+  <url>
+    <loc>https://portfoliobykushal.netlify.app/#Certification</loc>
+    <priority>0.8</priority>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://portfoliobykushal.netlify.app/#Contact</loc>
+    <priority>0.8</priority>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>

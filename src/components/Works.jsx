@@ -13,28 +13,28 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, live_pr
     setShowFullDescription(!showFullDescription);
   };
 
-  const truncatedDescription = description.length > 100 
-    ? `${description.substring(0, 100)}...` 
+  const truncatedDescription = description.length > 100
+    ? `${description.substring(0, 100)}...`
     : description;
 
   return (
     <div className="bg-primary p-5 rounded-2xl sm:w-[360px] w-full min-h-[390px] overflow-hidden relative shadow-card">
       <img src={image} alt={name} className="w-full h-[200px] object-cover rounded-xl" />
       <h3 className="mt-4 text-white font-bold text-[22px] truncate">{name}</h3>
-      
+
       <div className="mt-4">
         <p className="text-cardtext text-[14px] mb-2 overflow-y-auto custom-scrollbar">
           {showFullDescription ? description : truncatedDescription}
         </p>
         {description.length > 100 && (
-          <button 
-            onClick={toggleDescription} 
+          <button
+            onClick={toggleDescription}
             className="text-secondary hover:text-white text-sm mb-3"
           >
             {showFullDescription ? "Show Less" : "Show More"}
           </button>
         )}
-        
+
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag) => (
             <p key={tag.name} className="text-[12px] text-white px-2 py-1 rounded-full bg-black-200 shadow-sm">
@@ -73,8 +73,8 @@ const Works = () => {
   const filteredProjects = activeCategory === "web"
     ? projects
     : activeCategory === "cyber"
-    ? cyberProjects
-    : funProjects;
+      ? cyberProjects
+      : funProjects;
 
   return (
     <>
@@ -98,11 +98,10 @@ const Works = () => {
           {["web", "cyber", "fun"].map((category) => (
             <button
               key={category}
-              className={`py-2 px-4 sm:px-6 rounded-full text-[13px] sm:text-[15px] font-medium transition-colors duration-300 ${
-                activeCategory === category
+              className={`py-2 px-4 sm:px-6 rounded-full text-[13px] sm:text-[15px] font-medium transition-colors duration-300 ${activeCategory === category
                   ? "bg-primary text-white"
                   : "text-secondary hover:bg-black-200 hover:text-white"
-              }`}
+                }`}
               onClick={() => setActiveCategory(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -117,22 +116,23 @@ const Works = () => {
         ))}
       </div>
 
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: #000000;
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #3f8c00;
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #377405;
-        }
-      `}</style>
+      {/* <style>{`
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000000;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #3f8c00;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #377405;
+  }
+`}</style> */}
+
     </>
   );
 };
