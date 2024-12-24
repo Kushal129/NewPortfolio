@@ -1,19 +1,10 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AnimatedCursor from 'react-animated-cursor';
 import Loading from './components/WebLoading';
 import ErrorBoundary from './components/ErrorBoundary';
-import SocialLinks from './components/SocialLinks';
-
-const About = lazy(() => import('./components/About'));
-const Contact = lazy(() => import('./components/Contact'));
-const Experience = lazy(() => import('./components/Experience'));
-const Hero = lazy(() => import('./components/Hero'));
-const Navbar = lazy(() => import('./components/Navbar'));
-const Tech = lazy(() => import('./components/Tech'));
-const Works = lazy(() => import('./components/Works'));
-const StarsCanvas = lazy(() => import('./components/canvas/Stars'));
-const Certification = lazy(() => import('./components/Certification'));
+import IndexPage from './components/IndexPage';
+import Blog from './components/Blog/Blog';
 
 const App = () => {
   return (
@@ -37,22 +28,11 @@ const App = () => {
               }}
               clickables={['a', 'button', '.link']}
             />
-            <div className="relative z-0 bg-primary">
-              <div className="bg-cover bg-no-repeat bg-center">
-                <Navbar />
-                <Hero />
-              </div>
-              <About />
-              <Experience />
-              <Tech />
-              <Works />
-              <Certification />
-              <div className="relative z-0">
-                <Contact />
-                <StarsCanvas />
-              </div>
-              <SocialLinks />
-            </div>
+            <Routes>
+              <Route path="/" element={<IndexPage />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path='*' element={<IndexPage />}/>
+            </Routes>
           </Suspense>
         </BrowserRouter>
       </ErrorBoundary>

@@ -39,7 +39,6 @@ const Navbar = () => {
             <span className='text-secondary hover:text-white hidden md:inline'>| Cybersecurity & Web Development</span>
             <span className='text-secondary hover:text-white inline md:hidden'>| Cyber & Web Dev</span>
           </p>
-
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
@@ -53,6 +52,9 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li className={`hover:text-white text-[18px] font-medium cursor-pointer`}>
+            <Link to="/blog" onClick={() => setActive("Blog")} className="text-secondary hover:text-white border-b-2 border-transparent transition duration-300">Blog</Link>
+          </li>
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -81,6 +83,9 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
+                <Link to="/blog" onClick={() => setActive("Blog")} className="text-secondary hover:text-white border-b-2 border-transparent transition duration-300">Blog</Link>
+              </li>
             </ul>
           </div>
         </div>
