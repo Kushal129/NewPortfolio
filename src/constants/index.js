@@ -331,6 +331,32 @@ const funProjects = [
     source_code_link: "https://github.com/",
     live_preview_link: "https://barcodegeneratorkhp.netlify.app/"
   },
+  {
+    name: "Smart Image Store",
+    description:
+      "A wallpaper website built with React JS, Tailwind CSS, Firebase, and Cloudinary. Users can download wallpapers and upload their own images, providing a link to use anywhere without needing to host the image on the website. This project offers a seamless experience for users to manage and share their images effortlessly.",
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Firebase",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "Cloudinary",
+        color: "purple-text-gradient",
+      },
+    ],
+    image: Assets.smartImageStore,
+    source_code_link: "https://github.com/Kushal129/",
+    live_preview_link: "https://smartimagestorebykhp.netlify.app/"
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects, cyberProjects, funProjects };

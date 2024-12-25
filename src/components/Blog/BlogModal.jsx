@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin , FaTimes} from 'react-icons/fa'; 
-import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaTimes } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { formatDate } from './Utils';
 
 const BlogModal = ({ post, onClose }) => {
@@ -8,7 +8,6 @@ const BlogModal = ({ post, onClose }) => {
 
   const handleShare = (e) => {
     e.stopPropagation();
-
     if (navigator.share) {
       navigator.share({
         title: `Check out this blog: ${post.title}`,
@@ -27,16 +26,25 @@ const BlogModal = ({ post, onClose }) => {
     setShowFollowOptions((prev) => !prev);
   };
 
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!post) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 overflow-y-auto">
+    <div
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 overflow-y-auto"
+      onClick={handleBackdropClick}
+    >
       <div className="flex items-center justify-center min-h-screen p-4">
-        <div className="bg-gradient-to-br from-black to-transparent rounded-xl w-full max-w-4xl relative animate-[modalFadeIn_0.3s_ease-out]">
+        <div className="bg-gradient-to-br from-black to-transparent rounded-xl w-full max-w-4xl relative overflow-y-auto max-h-screen custom-scroll">
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-black-200 text-gray-400 hover:text-white hover:bg-black-100 transition-colors z-20"
+            className="absolute top-4 right-4 p-2 rounded-full bg-black text-gray-400 hover:text-white hover:bg-black-100 transition-colors z-50"
           >
             <FaTimes size={16} />
           </button>
@@ -74,7 +82,7 @@ const BlogModal = ({ post, onClose }) => {
               {post.content && post.content.length > 0 ? (
                 post.content.map((section, index) => (
                   <div key={index} className="space-y-2">
-                    <hr className='mt-2 border-1 border-secondary border-dotted opacity-50' />
+                    <hr className="mt-2 border-1 border-secondary border-dotted opacity-50" />
                     <h2 className="text-xl font-semibold mt-2 text-secondary">{section.title}</h2>
                     <div className="text-gray-300">
                       {Array.isArray(section.data) ? (
@@ -82,10 +90,11 @@ const BlogModal = ({ post, onClose }) => {
                           <div key={idx} className="mb-4">
                             {item.point ? (
                               <div>
-                                <strong className='text-black-100'>{item.point}:</strong> {item.description}
+                                <strong className="text-black-100">{item.point}:</strong> {item.description}
                               </div>
                             ) : (
-                              <div>{item.example && <strong className='text-gray-400'>{item.example}: </strong>}
+                              <div>
+                                {item.example && <strong className="text-gray-400">{item.example}: </strong>}
                                 {item.description}
                               </div>
                             )}
@@ -111,12 +120,14 @@ const BlogModal = ({ post, onClose }) => {
               <div className="flex items-center gap-4 text-gray-200">
                 <button
                   onClick={handleShare}
-                  className="px-4 py-2 rounded-full bg-black border border-black-100 hover:bg-secondary transition-colors">
+                  className="px-4 py-2 rounded-full bg-black border border-black-100 hover:bg-secondary transition-colors"
+                >
                   Share
                 </button>
                 <button
                   onClick={toggleFollowOptions}
-                  className="px-4 py-2 rounded-full bg-secondary/20 hover:bg-secondary/30 transition-colors">
+                  className="px-4 py-2 rounded-full bg-secondary/20 hover:bg-secondary/30 transition-colors"
+                >
                   Follow Author
                 </button>
               </div>
@@ -131,7 +142,7 @@ const BlogModal = ({ post, onClose }) => {
                   rel="noopener noreferrer"
                   className="flex items-center text-secondary hover:text-white transition-colors"
                 >
-                 <FaGithub />
+                  <FaGithub />
                 </a>
                 <a
                   href="https://linkedin.com/in/yourprofile"
@@ -147,7 +158,7 @@ const BlogModal = ({ post, onClose }) => {
                   rel="noopener noreferrer"
                   className="flex items-center text-secondary hover:text-white transition-colors"
                 >
-                 <FaXTwitter/>
+                  <FaXTwitter />
                 </a>
               </div>
             )}

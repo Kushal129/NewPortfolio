@@ -31,6 +31,7 @@ import cricket from "./cricket.png";
 import cli from "./cli.png";
 import pythonP from "./pythonP.png";
 import peds from "./peds.png";
+import smartImageStore from "./smartImageStore.png"
 
 
 import kaliLinux from "./tech/kaliwhite.png";
@@ -74,6 +75,7 @@ export {
   cli,
   pythonP,
   kaliLinux,
+  smartImageStore,
   windowsSecurity,
   cybersecurityTools,
   scripting,

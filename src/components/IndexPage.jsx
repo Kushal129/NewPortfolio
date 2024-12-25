@@ -2,7 +2,7 @@ import React from 'react';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Tech from '../components/Tech';
-import Works from '../components/Works';
+import Works from '../components/Projects/Works';
 import Certification from '../components/Certification';
 import Contact from '../components/Contact';
 import StarsCanvas from '../components/canvas/Stars';
