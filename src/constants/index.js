@@ -172,16 +172,16 @@ const cyberProjects = [
     source_code_link: "https://github.com/Kushal129/",
   },
   {
-    name: "Python Projects",
+    name: "Vulnerability Scanning Tool",
     description:
-      "A collection of Python projects demonstrating various functionalities and applications, from automation scripts to data analysis.",
+      "A Python-based tool to identify common security vulnerabilities in websites, including SSL/TLS configuration, SQL Injection, XSS, and more.",
     tags: [
       {
         name: "Python",
         color: "yellow-text-gradient",
       },
     ],
-    image: Assets.pythonP,
+    image: Assets.VST,
     source_code_link: "https://github.com/Kushal129/",
   },
   {
@@ -226,6 +226,10 @@ const projects = [
         name: "Tailwind CSS",
         color: "blue-text-gradient",
       },
+      {
+        name: "Firebase",
+        color: "orange-text-gradient",
+      },
     ],
     image: Assets.slwkhp,
     source_code_link: "https://github.com/Kushal129/SmartLearningWithKHP",
@@ -248,6 +252,10 @@ const projects = [
         name: "CSS",
         color: "blue-text-gradient",
       },
+      {
+        name: "MySQL Database",
+        color: "green-text-gradient",
+      },
     ],
     image: Assets.bpms,
     source_code_link: "https://github.com/Kushal129/Bus-Pass-Management-System",
@@ -264,6 +272,10 @@ const projects = [
       {
         name: "C#",
         color: "blue-text-gradient",
+      },
+      {
+        name: "SQL Database",
+        color: "green-text-gradient",
       },
     ],
     image: Assets.ams,

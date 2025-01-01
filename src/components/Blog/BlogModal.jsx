@@ -137,7 +137,7 @@ const BlogModal = ({ post, onClose }) => {
             {showFollowOptions && (
               <div className="flex justify-end items-end gap-3 text-xl mt-4">
                 <a
-                  href="https://github.com/yourprofile"
+                  href="https://github.com/Kushal129"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-secondary hover:text-white transition-colors"
@@ -145,7 +145,7 @@ const BlogModal = ({ post, onClose }) => {
                   <FaGithub />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/kushal-pipaliya"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-secondary hover:text-white transition-colors"
@@ -153,7 +153,7 @@ const BlogModal = ({ post, onClose }) => {
                   <FaLinkedin />
                 </a>
                 <a
-                  href="https://twitter.com/yourprofile"
+                  href="https://x.com/KushalPipaliya5"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-secondary hover:text-white transition-colors"

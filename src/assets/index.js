@@ -32,6 +32,7 @@ import cli from "./cli.png";
 import pythonP from "./pythonP.png";
 import peds from "./peds.png";
 import smartImageStore from "./smartImageStore.png"
+import VST from "./VulnerabilityScanningTool.png"
 
 
 import kaliLinux from "./tech/kaliwhite.png";
@@ -74,6 +75,7 @@ export {
   perfume,
   cli,
   pythonP,
+  VST,
   kaliLinux,
   smartImageStore,
   windowsSecurity,
